@@ -1,0 +1,35 @@
+.postLink {
+  text-decoration: none;
+  color: black;
+}
+
+.articleList {
+  padding: 0 40px;
+}
+
+.articleImage {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+}
+
+.articleItem {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid #323232;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+/* 
+.articleItem:hover {
+  box-shadow: 8px 5px 6px #323232;
+  transform: rotateY(10deg);
+} */
+
+.articlePound {
+  margin-left: 30px;
+  padding: 0 0 22px 0;
+}

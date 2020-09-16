@@ -1,0 +1,56 @@
+body {
+  background-color: #eeeeee38;
+}
+
+.postContent {
+  margin: 0 auto;
+  padding: 20px 40px;
+  width: 80%;
+  text-align: center;
+}
+
+.articleContent{
+    background-color: #eeeeee4d;
+    border: .25em solid;
+    padding: .75em;
+    width: 100%;
+    height: 100px;
+    border-style: inset;
+}
+
+.articleName {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.articleImage {
+  height: 40%;
+  width: 60%;
+  padding: 15px 0px;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerColor {
+  color: #0000007a;
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnClass {
+  height: 20px; 
+}
+
+.textareStyle {
+  width: 60%;
+  margin: 30px;
+}
