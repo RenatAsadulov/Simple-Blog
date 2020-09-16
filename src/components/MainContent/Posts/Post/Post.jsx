@@ -22,14 +22,8 @@ const Post = ({ post }) => {
         <div className={style.articleContent}>{post.content}</div>
       </div>
 
-      <form action="" className={style.formWrapper}>
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          className={style.textareStyle}
-        ></textarea>
+      <form className={style.formWrapper} onSubmit={() => alert('Hello!')} >
+        <textarea cols="30" rows="10" className={style.textareStyle} placeholder='Comment text'></textarea>
         <br></br>
         <button className={style.btnClass}>Click HEre</button>
       </form>
