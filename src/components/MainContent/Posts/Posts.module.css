@@ -23,11 +23,11 @@
   border-radius: 10px;
   background-color: #eee;
 }
-/* 
-.articleItem:hover {
-  box-shadow: 8px 5px 6px #323232;
-  transform: rotateY(10deg);
-} */
+
+.articleItem:active {
+  box-shadow: 0px 0px 10px skyblue;
+  border-color: skyblue;
+}
 
 .articlePound {
   margin-left: 30px;

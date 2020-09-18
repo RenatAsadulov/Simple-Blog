@@ -17,7 +17,7 @@ export const MainContent = ({ posts, setPosts }) => {
     }
   });
 
-  const renderPost = (routerProps, posts) => {
+  const renderPost = (routerProps) => {
     let postId = parseInt(routerProps.match.params.id);
     let foundPost = posts.find((post) => post.postID === postId);
     return foundPost ? <Post post={foundPost} /> : <div>Not found</div>;

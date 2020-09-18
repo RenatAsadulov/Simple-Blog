@@ -7,21 +7,21 @@ export const Posts = ({ posts }) => {
     <>
       <ul className={style.articleList}>
         {posts.map((post) => (
-          <li className={style.articleItem} key={post.postID}>
-            <div>
-              <img
-                src={post.urlToImage}
-                alt="someArticleImageHasToBeHere"
-                className={style.articleImage}
-              />
-            </div>
-            <div className={style.articlePound}>
-              <NavLink to={`/posts/${post.postID}`} className={style.postLink}>
+          <NavLink to={`/posts/${post.postID}`} className={style.postLink}>
+            <li className={style.articleItem} key={post.postID}>
+              <div>
+                <img
+                  src={post.urlToImage}
+                  alt="someArticleImageHasToBeHere"
+                  className={style.articleImage}
+                />
+              </div>
+              <div className={style.articlePound}>
                 <h3>{post.title}</h3>
                 <article>{post.description}</article>
-              </NavLink>
-            </div>
-          </li>
+              </div>
+            </li>
+          </NavLink>
         ))}
       </ul>
     </>
