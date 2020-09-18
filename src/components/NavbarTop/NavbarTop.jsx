@@ -1,23 +1,13 @@
 import React from "react";
-import "./NavbarTop.css";
+import style from "./NavbarTop.module.css";
 import { NavLink } from "react-router-dom";
 
 const NavbarTop = () => {
   return (
-    <ul>
-      <li className="link">
-        <NavLink to="/posts" className="link-style" exact>
-          some
-        </NavLink>
-      </li>
-      <li className="link">
-        <NavLink to="/something" className="link-style" exact>
-          something
-        </NavLink>
-      </li>
-      <li className="link">
-        <NavLink to="/somethingnew" className="link-style" exact>
-          somethingnew
+    <ul className={style.navbarStyle}>
+      <li className={style.link}>
+        <NavLink to="/" className={style.linkStyle} >
+          Posts
         </NavLink>
       </li>
     </ul>

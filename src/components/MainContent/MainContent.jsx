@@ -4,7 +4,8 @@ import Post from "./Posts/Post/Post";
 import { BrowserRouter, Route } from "react-router-dom";
 import axios from "axios";
 
-export const MainContent = ({ posts, setPosts }) => {
+export const MainContent = ({ posts, commentText, setPosts }) => {
+  console.log(commentText)
   useEffect(() => {
     if (posts.length === 0) {
       axios
@@ -23,18 +24,21 @@ export const MainContent = ({ posts, setPosts }) => {
     return foundPost ? <Post post={foundPost} /> : <div>Not found</div>;
   };
 
-  console.log(posts);
-
   return (
-    <BrowserRouter>
-      <Route
-        path="/"
-        render={(routerProps) => (
-          <Posts posts={posts} routerProps={routerProps} />
-        )}
-        exact
-      />
-      <Route path="/posts/:id" render={(routerProps) => renderPost(routerProps)} />
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Route
+          path="/"
+          render={(routerProps) => (
+            <Posts posts={posts} commentText={commentText} routerProps={routerProps} />
+          )}
+          exact
+        />
+        <Route
+          path="/posts/:id"
+          render={(routerProps) => renderPost(routerProps)}
+        />
+      </BrowserRouter>
+    </>
   );
 };

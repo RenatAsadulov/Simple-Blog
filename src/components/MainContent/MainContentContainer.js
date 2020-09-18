@@ -4,6 +4,7 @@ import { setPostsAC } from "../../redux/MainContentReducer";
 
 const mapStateToProps = (state) => ({
   posts: state.mainContent.posts,
+  commentText: state.mainContent.commentText,
 });
 
 const mapDispatchToProps = (dispatch) => {

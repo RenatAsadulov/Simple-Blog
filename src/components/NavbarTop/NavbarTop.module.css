@@ -1,14 +1,19 @@
+.navbarStyle {
+    height: 50px;
+    padding-left: 50px;
+    margin: 20px;
+}
+
 .link {
     list-style-type: none;
     display: inline;
-    padding: 5px;
+    padding: 10px 20px;
     border: 1px solid black;
-    border-radius: 30px;
-    margin-left: 1%;
+    border-radius: 10px;
     background: linear-gradient(180deg, #fff 0%, #f5f7f9 100%);
 }
 
-.link-style {
+.linkStyle {
     text-decoration: none;
     background: linear-gradient(180deg, #fff 0%, #f5f7f9 100%);
     color: black;
