@@ -2,9 +2,19 @@ import React from "react";
 import style from "./Post.module.css";
 import { NavLink } from "react-router-dom";
 
-const Post = ({ post, commentText }) => {
-  console.log(commentText)
+const Post = ({ post, updateCommentText }) => {
+  console.log(updateCommentText);
+  console.log(post.newCommentText);
   const date = post.publishedAt.split("T");
+
+  const textArea = React.createRef();
+  console.log()
+
+  const onPostChange = () => {
+    let text = textArea.current.value;
+    updateCommentText(text);
+  };
+
   return (
     <>
       <div className={style.postWrapper}>
@@ -20,7 +30,7 @@ const Post = ({ post, commentText }) => {
               <h4 className={style.headerColor}>Author: {post.author}</h4>
             )}
             <h4 className={style.headerColor}>
-              Date: {date[0]}, Time: {date[1].slice(0, date[1].length-1)}  
+              Date: {date[0]}, Time: {date[1].slice(0, date[1].length - 1)}
             </h4>
           </div>
           <div>
@@ -31,12 +41,15 @@ const Post = ({ post, commentText }) => {
           )}
         </div>
 
-        <form className={style.formWrapper} onSubmit={() => alert("Hello!")}>
+        <form className={style.formWrapper}>
           <textarea
             cols="30"
             rows="10"
             className={style.textareStyle}
+            ref={textArea}
             placeholder="Comment text"
+            value={post.newCommentText}
+            onChange={onPostChange}
           ></textarea>
           <br></br>
           <button className={style.btnClass}>Click HEre</button>

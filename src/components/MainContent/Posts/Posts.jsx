@@ -2,13 +2,21 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Posts.module.css";
 
-export const Posts = ({ posts }) => {
-  console.log(posts)
+export const Posts = ({ posts, updateCommentText }) => {
+  console.log(updateCommentText);
   return (
     <ul className={style.articleList}>
       {posts.map((post) => (
-        <NavLink to={`/posts/${post.postID}`} className={style.postLink} key={post.postID}>
-          <li className={style.articleItem} key={post.postID} >
+        <NavLink
+          to={`/posts/${post.postID}`}
+          className={style.postLink}
+          key={post.postID}
+        >
+          <li
+            className={style.articleItem}
+            key={post.postID}
+            updateCommentText={updateCommentText}
+          >
             <div>
               <img
                 src={post.urlToImage}

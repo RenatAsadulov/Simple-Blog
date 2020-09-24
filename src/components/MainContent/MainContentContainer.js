@@ -1,6 +1,9 @@
 import { connect } from "react-redux";
 import { MainContent } from "./MainContent";
-import { setPostsAC } from "../../redux/MainContentReducer";
+import {
+  setPostsAC,
+  updateNewCommentTextAC,
+} from "../../redux/MainContentReducer";
 
 const mapStateToProps = (state) => ({
   posts: state.mainContent.posts,
@@ -11,6 +14,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setPosts: (posts) => {
       dispatch(setPostsAC(posts));
+    },
+    updateCommentText: (text) => {
+      dispatch(updateNewCommentTextAC(text));
     },
   };
 };
