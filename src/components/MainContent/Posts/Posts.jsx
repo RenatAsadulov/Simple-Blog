@@ -2,8 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Posts.module.css";
 
-export const Posts = ({ posts, updateCommentText }) => {
-  console.log(updateCommentText);
+export const Posts = ({ posts }) => {
   return (
     <ul className={style.articleList}>
       {posts.map((post) => (
@@ -12,11 +11,7 @@ export const Posts = ({ posts, updateCommentText }) => {
           className={style.postLink}
           key={post.postID}
         >
-          <li
-            className={style.articleItem}
-            key={post.postID}
-            updateCommentText={updateCommentText}
-          >
+          <li className={style.articleItem} key={post.postID}>
             <div>
               <img
                 src={post.urlToImage}

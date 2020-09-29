@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Post.module.css";
 import { NavLink } from "react-router-dom";
 
-const Post = ({ post, updateCommentText }) => {
-  console.log(updateCommentText);
-  console.log(post.newCommentText);
+const Post = ({ post }) => {
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
   const date = post.publishedAt.split("T");
 
-  const textArea = React.createRef();
-  console.log()
+  const addCommentary = (e) => {
+    e.preventDefault();
+    setComments([...comments, comment]);
+    setComment("");
+  };
 
-  const onPostChange = () => {
-    let text = textArea.current.value;
-    updateCommentText(text);
+  const onPostChange = (event) => {
+    setComment(event.target.value);
   };
 
   return (
@@ -41,18 +43,24 @@ const Post = ({ post, updateCommentText }) => {
           )}
         </div>
 
+        <div>{comments}</div>
+
         <form className={style.formWrapper}>
           <textarea
             cols="30"
             rows="10"
             className={style.textareStyle}
-            ref={textArea}
             placeholder="Comment text"
-            value={post.newCommentText}
+            value={comment}
             onChange={onPostChange}
           ></textarea>
-          <br></br>
-          <button className={style.btnClass}>Click HEre</button>
+          <button
+            className={style.btnClass}
+            type="submit"
+            onClick={addCommentary}
+          >
+            Click HEre
+          </button>
         </form>
       </div>
     </>
