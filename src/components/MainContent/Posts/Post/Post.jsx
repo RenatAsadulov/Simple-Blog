@@ -42,8 +42,15 @@ const Post = ({ post }) => {
             <div className={style.articleContent}>{post.content}</div>
           )}
         </div>
+        <div className={style.commentHeader}>
+          <h3 >Comments</h3>
+        </div>
 
-        <div>{comments}</div>
+        <ul className={style.commentStyle}>
+          {comments.map((comment) => (
+            <li className={style.commentItem}>{comment}</li>
+          ))}
+        </ul>
 
         <form className={style.formWrapper}>
           <textarea
