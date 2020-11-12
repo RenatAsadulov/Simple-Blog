@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import style from "./Posts.module.css";
 
 export const Posts = ({ posts }) => {
+  console.log(posts)
   return (
     <ul className={style.articleList}>
       {posts.map((post) => (

@@ -3,7 +3,7 @@ import style from "./Post.module.css";
 import { NavLink } from "react-router-dom";
 
 const Post = ({ post }) => {
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState("weiughwiug");
   const [comments, setComments] = useState([]);
   const date = post.publishedAt.split("T");
 
